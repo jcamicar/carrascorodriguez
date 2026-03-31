@@ -1,7 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
-import InsurerGrid from "@/components/InsurerGrid";
 import { insurers } from "@/data/insurers";
 import { ExternalLink } from "lucide-react";
 
@@ -18,29 +17,38 @@ const Aseguradoras = () => (
 
     <section className="py-16">
       <div className="container">
-        <InsurerGrid />
-
-        <div className="mt-16">
-          <h2 className="mb-6 font-heading text-2xl font-bold text-center">Formas de pago por aseguradora</h2>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {insurers.map((ins) => (
-              <div key={ins.slug} className="rounded-xl border bg-card p-5 shadow-sm">
-                <h3 className="mb-2 font-heading text-base font-semibold" style={{ color: ins.color }}>{ins.name}</h3>
-                <ul className="space-y-1 text-sm text-muted-foreground">
-                  <li>• PSE — Pago en línea</li>
-                  <li>• Tarjeta de crédito</li>
-                  <li>• Débito automático</li>
-                  <li>• Consignación bancaria</li>
-                </ul>
-                <a
-                  href="#"
-                  className="mt-3 inline-flex items-center gap-1 text-xs font-medium text-accent hover:underline"
-                >
-                  Portal de pagos <ExternalLink className="h-3 w-3" />
-                </a>
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {insurers.map((ins) => (
+            <div key={ins.slug} className="flex flex-col rounded-xl border bg-card p-6 shadow-sm transition-all hover:shadow-md">
+              <div className="mb-4 flex items-center gap-4">
+                <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-lg border bg-white p-2">
+                  <img src={ins.logo} alt={ins.name} className="h-full w-full object-contain" loading="lazy" width={64} height={64} />
+                </div>
+                <div>
+                  <h3 className="font-heading text-lg font-semibold">{ins.name}</h3>
+                  <p className="text-xs text-muted-foreground">{ins.description}</p>
+                </div>
               </div>
-            ))}
-          </div>
+
+              <div className="mb-4 flex-1">
+                <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">Formas de pago</p>
+                <ul className="space-y-1">
+                  {ins.paymentMethods.map((m) => (
+                    <li key={m} className="text-sm text-muted-foreground">• {m}</li>
+                  ))}
+                </ul>
+              </div>
+
+              <a
+                href={ins.portalUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-sm font-medium text-accent hover:underline"
+              >
+                Portal de pagos <ExternalLink className="h-3.5 w-3.5" />
+              </a>
+            </div>
+          ))}
         </div>
       </div>
     </section>
