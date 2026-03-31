@@ -104,7 +104,7 @@ const Header = () => {
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">
-          <a href="tel:+573001234567" className="flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground">
+          <a href="tel:+573107695580" className="flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground">
             <Phone className="h-4 w-4" /> Contáctanos
           </a>
           <Button asChild>
