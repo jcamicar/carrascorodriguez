@@ -1,6 +1,6 @@
 import suraLogo from "@/assets/insurers/sura.png";
 import bolivarLogo from "@/assets/insurers/bolivar.png";
-import libertyLogo from "@/assets/insurers/liberty.png";
+import libertyLogo from "@/assets/insurers/liberty.jpg";
 import chubbLogo from "@/assets/insurers/chubb.png";
 import zurichLogo from "@/assets/insurers/zurich.png";
 import mundialLogo from "@/assets/insurers/mundial.png";
