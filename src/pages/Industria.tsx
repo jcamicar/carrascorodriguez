@@ -54,6 +54,47 @@ const Industria = () => {
         </div>
       </section>
 
+      {industry.highlights && industry.highlights.length > 0 && (
+        <section className="border-t bg-accent/5 py-12">
+          <div className="container">
+            <div className="grid gap-6 sm:grid-cols-3">
+              {industry.highlights.map((h) => (
+                <div key={h.title} className="rounded-xl border bg-card p-6 text-center shadow-sm">
+                  <h3 className="mb-2 font-heading text-lg font-bold">{h.title}</h3>
+                  <p className="text-sm text-muted-foreground">{h.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {industry.specialtyProducts && industry.specialtyProducts.length > 0 && (
+        <section className="border-t py-16">
+          <div className="container">
+            <h2 className="mb-8 font-heading text-2xl font-bold">Productos de especialidad</h2>
+            <div className="grid gap-6 sm:grid-cols-2">
+              {industry.specialtyProducts.map((sp, i) => (
+                <div key={sp.title} className="rounded-xl border bg-card p-6 shadow-sm">
+                  <div className="mb-3 flex items-center gap-3">
+                    <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-sm font-bold text-primary-foreground">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <h3 className="font-heading text-lg font-bold">{sp.title}</h3>
+                  </div>
+                  <p className="mb-4 text-sm leading-relaxed text-muted-foreground">{sp.desc}</p>
+                  <div className="flex flex-wrap gap-2">
+                    {sp.tags.map((tag) => (
+                      <span key={tag} className="rounded-full bg-accent/10 px-3 py-1 text-xs font-medium text-accent">{tag}</span>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {relatedProducts.length > 0 && (
         <section className="border-t bg-muted/50 py-16">
           <div className="container">
