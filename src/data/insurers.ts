@@ -8,6 +8,7 @@ import hdiLogo from "@/assets/insurers/hdi.png";
 import sbsLogo from "@/assets/insurers/sbs.png";
 import cesceLogo from "@/assets/insurers/cesce.jpg";
 import berkleyLogo from "@/assets/insurers/berkley.svg";
+import estadoLogo from "@/assets/insurers/estado.png";
 
 export interface Insurer {
   name: string;
