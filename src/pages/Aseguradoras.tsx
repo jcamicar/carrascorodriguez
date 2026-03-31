@@ -39,14 +39,9 @@ const Aseguradoras = () => (
                 </ul>
               </div>
 
-              <a
-                href={ins.portalUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 text-sm font-medium text-accent hover:underline"
-              >
-                Portal de pagos <ExternalLink className="h-3.5 w-3.5" />
-              </a>
+              <span className="inline-flex items-center gap-1 text-sm font-medium text-muted-foreground">
+                Consulta con tu asesor para métodos de pago
+              </span>
             </div>
           ))}
         </div>

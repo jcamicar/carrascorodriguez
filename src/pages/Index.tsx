@@ -120,7 +120,7 @@ const Index = () => (
         <p className="mb-2 text-sm font-medium uppercase tracking-widest text-accent">Nuevo</p>
         <h2 className="mb-4 font-heading text-3xl font-bold">Plataforma Wellness</h2>
         <p className="mx-auto mb-6 max-w-lg text-muted-foreground">
-          Beneficios laborales integrales en seguros para sus empleados. Una experiencia como Betterfly, diseñada para el mercado colombiano.
+          Beneficios laborales integrales en seguros para sus empleados. Una plataforma diseñada para el mercado colombiano.
         </p>
         <Button size="lg" asChild>
           <Link to="/wellness">Conocer más <ArrowRight className="ml-1 h-4 w-4" /></Link>
