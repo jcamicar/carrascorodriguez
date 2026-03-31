@@ -1,12 +1,25 @@
 import { Monitor, Building2, Truck, Dice5, Pill, Stethoscope, Bike, Radio } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
+export interface IndustryHighlight {
+  title: string;
+  desc: string;
+}
+
+export interface SpecialtyProduct {
+  title: string;
+  desc: string;
+  tags: string[];
+}
+
 export interface Industry {
   slug: string;
   name: string;
   icon: LucideIcon;
   description: string;
   heroDescription: string;
+  highlights?: IndustryHighlight[];
+  specialtyProducts?: SpecialtyProduct[];
   relatedProducts: string[];
 }
 
