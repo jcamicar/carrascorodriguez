@@ -1,12 +1,25 @@
 import { Monitor, Building2, Truck, Dice5, Pill, Stethoscope, Bike, Radio } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
+export interface IndustryHighlight {
+  title: string;
+  desc: string;
+}
+
+export interface SpecialtyProduct {
+  title: string;
+  desc: string;
+  tags: string[];
+}
+
 export interface Industry {
   slug: string;
   name: string;
   icon: LucideIcon;
   description: string;
   heroDescription: string;
+  highlights?: IndustryHighlight[];
+  specialtyProducts?: SpecialtyProduct[];
   relatedProducts: string[];
 }
 
@@ -39,9 +52,20 @@ export const industries: Industry[] = [
     slug: "juegos-azar",
     name: "Juegos de Suerte y Azar",
     icon: Dice5,
-    description: "Soluciones de seguros para la industria del entretenimiento y juegos.",
-    heroDescription: "La industria del juego tiene regulaciones y riesgos específicos. Ofrecemos coberturas especializadas que cumplen con los requisitos regulatorios y protegen sus operaciones.",
-    relatedProducts: ["responsabilidad", "crimen", "cibernetico", "do", "property"],
+    description: "Especialistas en seguros para la industria del juego: garantías, casinos, operadores land based y online.",
+    heroDescription: "Nuestra experiencia va más allá del conocimiento en seguros. Conocemos el sector de juegos de suerte y azar y su regulación de manera profunda. Hablamos el lenguaje del operador y el de la aseguradora con igual fluidez. Somos los perfectos intérpretes para que las compañías aseguradoras comprendan el verdadero perfil del sector, sus controles y su profesionalismo. Traducimos complejidad en confianza.",
+    highlights: [
+      { title: "Líderes en emisión de garantías", desc: "Para gaming, tanto para operadores land based como online." },
+      { title: "Cobertura integral", desc: "Land Based & Online — protección para ambos segmentos." },
+      { title: "Regulación", desc: "Conocimiento profundo del marco normativo del sector." },
+    ],
+    specialtyProducts: [
+      { title: "Garantías de Cumplimiento", desc: "Para operadores land based y online. Respaldamos el cumplimiento de las obligaciones contractuales y regulatorias ante las autoridades de juego.", tags: ["Land Based", "Online"] },
+      { title: "Garantía de Pago de Premios", desc: "Aseguramos el pago oportuno de premios a los jugadores, generando confianza en el operador y cumpliendo con los requisitos regulatorios del sector.", tags: ["Premios", "Regulación"] },
+      { title: "Seguros para Casinos y Establecimientos", desc: "Somos de las pocas firmas que han logrado asegurar casinos, establecimientos de juego y el transporte de máquinas tragamonedas. Cobertura integral.", tags: ["Casinos", "Tragamonedas", "Transporte"] },
+      { title: "Gestión de Contratos Fiduciarios", desc: "Apoyamos en la estructuración y gestión de contratos fiduciarios cuando el regulador o la operación lo requieren, integrando la solución aseguradora.", tags: ["Fiduciario", "Estructuración"] },
+    ],
+    relatedProducts: ["responsabilidad", "crimen", "cibernetico", "do", "property", "garantia-indemnizacion"],
   },
   {
     slug: "farmaceuticas",
