@@ -9,6 +9,9 @@ import sbsLogo from "@/assets/insurers/sbs.png";
 import cesceLogo from "@/assets/insurers/cesce.jpg";
 import berkleyLogo from "@/assets/insurers/berkley.svg";
 import estadoLogo from "@/assets/insurers/estado.png";
+import universalLogo from "@/assets/insurers/universal.png";
+import axaColpatriaLogo from "@/assets/insurers/axa-colpatria.png";
+import colmenaLogo from "@/assets/insurers/colmena.png";
 
 export interface Insurer {
   name: string;
