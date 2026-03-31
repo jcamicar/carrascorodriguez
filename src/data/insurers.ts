@@ -6,7 +6,8 @@ import zurichLogo from "@/assets/insurers/zurich.png";
 import mundialLogo from "@/assets/insurers/mundial.png";
 import hdiLogo from "@/assets/insurers/hdi.png";
 import sbsLogo from "@/assets/insurers/sbs.png";
-import cesceLogo from "@/assets/insurers/cesce.png";
+import cesceLogo from "@/assets/insurers/cesce.jpg";
+import berkleyLogo from "@/assets/insurers/berkley.svg";
 
 export interface Insurer {
   name: string;
@@ -94,10 +95,19 @@ export const insurers: Insurer[] = [
   {
     name: "CESCE",
     slug: "cesce",
-    color: "#C62828",
+    color: "#1A3F8F",
     logo: cesceLogo,
     description: "Compañía española especializada en seguro de crédito a la exportación y riesgo político.",
     paymentMethods: ["Transferencia bancaria", "Débito automático"],
     portalUrl: "https://www.cesce.com",
+  },
+  {
+    name: "Berkley",
+    slug: "berkley",
+    color: "#006747",
+    logo: berkleyLogo,
+    description: "W. R. Berkley Corporation — aseguradora global especializada en líneas comerciales, exceso y reaseguro.",
+    paymentMethods: ["Transferencia bancaria", "Tarjeta de crédito", "Débito automático"],
+    portalUrl: "https://www.berkleyinternacional.com",
   },
 ];
