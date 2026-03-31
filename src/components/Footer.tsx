@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin } from "lucide-react";
 import logoVertical from "@/assets/logo-vertical.jpg";
+import { industries } from "@/data/industries";
 
 const Footer = () => (
   <footer className="border-t bg-primary text-primary-foreground">
@@ -16,10 +17,10 @@ const Footer = () => (
         <div>
           <h4 className="mb-3 font-heading text-sm font-semibold uppercase tracking-wider text-primary-foreground/80">Industrias</h4>
           <ul className="flex flex-col gap-1.5">
-            {["Tecnología", "Infraestructura", "Transporte", "Farmacéuticas", "Telecomunicaciones"].map((name) => (
-              <li key={name}>
-                <Link to={`/industria/${name.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")}`} className="text-sm text-primary-foreground/60 hover:text-primary-foreground">
-                  {name}
+            {industries.map((ind) => (
+              <li key={ind.slug}>
+                <Link to={`/industria/${ind.slug}`} className="text-sm text-primary-foreground/60 hover:text-primary-foreground">
+                  {ind.name}
                 </Link>
               </li>
             ))}

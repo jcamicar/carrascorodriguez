@@ -9,6 +9,9 @@ import sbsLogo from "@/assets/insurers/sbs.png";
 import cesceLogo from "@/assets/insurers/cesce.jpg";
 import berkleyLogo from "@/assets/insurers/berkley.svg";
 import estadoLogo from "@/assets/insurers/estado.png";
+import universalLogo from "@/assets/insurers/universal.png";
+import axaColpatriaLogo from "@/assets/insurers/axa-colpatria.png";
+import colmenaLogo from "@/assets/insurers/colmena.png";
 
 export interface Insurer {
   name: string;
@@ -119,5 +122,32 @@ export const insurers: Insurer[] = [
     description: "Aseguradora colombiana de vida con amplia trayectoria en seguros colectivos, vida grupo y accidentes personales.",
     paymentMethods: ["PSE — Pago en línea", "Tarjeta de crédito/débito", "Débito automático", "Consignación bancaria"],
     portalUrl: "https://www.segurosdelestado.com",
+  },
+  {
+    name: "Universal Assistance",
+    slug: "universal-assistance",
+    color: "#003366",
+    logo: universalLogo,
+    description: "Compañía líder en asistencia en viaje y seguros de asistencia internacional.",
+    paymentMethods: ["PSE — Pago en línea", "Tarjeta de crédito", "Transferencia bancaria"],
+    portalUrl: "https://www.universal-assistance.com",
+  },
+  {
+    name: "AXA Colpatria",
+    slug: "axa-colpatria",
+    color: "#00008F",
+    logo: axaColpatriaLogo,
+    description: "Alianza entre AXA y Colpatria. Seguros de vida, generales y soluciones corporativas en Colombia.",
+    paymentMethods: ["PSE — Pago en línea", "Tarjeta de crédito/débito", "Débito automático", "Consignación bancaria", "Scotiabank Colpatria"],
+    portalUrl: "https://www.axacolpatria.co",
+  },
+  {
+    name: "Colmena Seguros",
+    slug: "colmena",
+    color: "#F5A623",
+    logo: colmenaLogo,
+    description: "Aseguradora colombiana especializada en riesgos laborales, vida y seguros generales.",
+    paymentMethods: ["PSE — Pago en línea", "Tarjeta de crédito", "Débito automático", "Consignación bancaria"],
+    portalUrl: "https://www.colmenaseguros.com",
   },
 ];

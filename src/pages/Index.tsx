@@ -24,7 +24,7 @@ const Index = () => (
             Protegemos lo que mueve a su industria
           </h1>
           <p className="mb-8 text-lg text-primary-foreground/70">
-            Soluciones de seguros especializadas por industria. Más de 9 aseguradoras aliadas para diseñar el programa perfecto para su empresa.
+            Soluciones de seguros especializadas por industria. Más de 14 aseguradoras aliadas para diseñar el programa perfecto para su empresa.
           </p>
           <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
             <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90" asChild>
@@ -42,7 +42,7 @@ const Index = () => (
     <section className="border-b bg-card py-8">
       <div className="container flex flex-wrap items-center justify-center gap-8 lg:gap-16">
         {[
-          { icon: Shield, label: "9 aseguradoras aliadas" },
+          { icon: Shield, label: "14 aseguradoras aliadas" },
           { icon: Users, label: "8 industrias especializadas" },
           { icon: Sparkles, label: "23+ líneas de seguros" },
         ].map((stat) => (
