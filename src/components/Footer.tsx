@@ -43,7 +43,7 @@ const Footer = () => (
           <h4 className="mb-3 font-heading text-sm font-semibold uppercase tracking-wider text-primary-foreground/80">Contacto</h4>
           <ul className="flex flex-col gap-3">
             <li className="flex items-center gap-2 text-sm text-primary-foreground/60">
-              <Phone className="h-4 w-4" /> +57 300 123 4567
+              <Phone className="h-4 w-4" /> +57 310 769 5580
             </li>
             <li className="flex items-center gap-2 text-sm text-primary-foreground/60">
               <Mail className="h-4 w-4" /> info@carrascoseguros.com

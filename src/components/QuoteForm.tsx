@@ -27,7 +27,7 @@ const QuoteForm = () => {
     e.preventDefault();
     const productName = products.find(p => p.slug === form.product)?.name || form.product;
     const msg = `Hola, soy ${form.name}${form.company ? ` de ${form.company}` : ""}. Estoy interesado en ${productName}. ${form.message}`.trim();
-    const waUrl = `https://wa.me/573001234567?text=${encodeURIComponent(msg)}`;
+    const waUrl = `https://wa.me/573107695580?text=${encodeURIComponent(msg)}`;
     window.open(waUrl, "_blank");
     toast.success("Redirigiendo a WhatsApp para completar tu cotización");
   };

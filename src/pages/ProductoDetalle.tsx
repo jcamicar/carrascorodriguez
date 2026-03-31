@@ -1,5 +1,5 @@
 import { useParams, Link } from "react-router-dom";
-import { ArrowLeft, ArrowRight, CheckCircle2 } from "lucide-react";
+import { ArrowLeft, ArrowRight, CheckCircle2, Star, Target } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -49,46 +49,89 @@ const ProductoDetalle = () => {
 
       <section className="py-12">
         <div className="container grid gap-10 lg:grid-cols-3">
-          <div className="lg:col-span-2">
-            <p className="mb-8 text-lg leading-relaxed text-muted-foreground">{product.description}</p>
+          <div className="lg:col-span-2 space-y-10">
+            <div>
+              <p className="text-lg leading-relaxed text-muted-foreground">{product.description}</p>
+            </div>
 
-            <h2 className="mb-4 font-heading text-xl font-bold">Coberturas principales</h2>
-            <ul className="space-y-3">
-              {product.coverages.map((c) => (
-                <li key={c} className="flex items-start gap-2">
-                  <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-accent" />
-                  <span>{c}</span>
-                </li>
-              ))}
-            </ul>
+            <div>
+              <h2 className="mb-4 font-heading text-xl font-bold flex items-center gap-2">
+                <CheckCircle2 className="h-5 w-5 text-accent" /> Coberturas principales
+              </h2>
+              <div className="grid gap-2 sm:grid-cols-2">
+                {product.coverages.map((c) => (
+                  <div key={c} className="flex items-start gap-2 rounded-lg border bg-card p-3">
+                    <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
+                    <span className="text-sm">{c}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <h2 className="mb-4 font-heading text-xl font-bold flex items-center gap-2">
+                <Star className="h-5 w-5 text-accent" /> Beneficios
+              </h2>
+              <ul className="space-y-2">
+                {product.benefits.map((b) => (
+                  <li key={b} className="flex items-start gap-2">
+                    <Star className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
+                    <span className="text-sm text-muted-foreground">{b}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <h2 className="mb-4 font-heading text-xl font-bold flex items-center gap-2">
+                <Target className="h-5 w-5 text-accent" /> Ideal para
+              </h2>
+              <div className="flex flex-wrap gap-2">
+                {product.idealFor.map((item) => (
+                  <span key={item} className="rounded-full border bg-muted/50 px-4 py-1.5 text-sm font-medium">
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </div>
           </div>
 
           <div className="space-y-6">
-            <div className="rounded-xl border bg-card p-6 shadow-sm">
-              <h3 className="mb-3 font-heading text-lg font-semibold">¿Interesado?</h3>
-              <p className="mb-4 text-sm text-muted-foreground">
-                Solicite una cotización sin compromiso. Nuestros asesores le contactarán en menos de 24 horas.
-              </p>
-              <Button className="w-full" asChild>
-                <Link to={`/cotizar?producto=${product.slug}`}>Cotizar {product.name} <ArrowRight className="ml-1 h-4 w-4" /></Link>
-              </Button>
-            </div>
-
-            {relatedIndustries.length > 0 && (
+            <div className="sticky top-20 space-y-6">
               <div className="rounded-xl border bg-card p-6 shadow-sm">
-                <h3 className="mb-3 font-heading text-lg font-semibold">Industrias relacionadas</h3>
-                <ul className="space-y-2">
-                  {relatedIndustries.map((ind) => (
-                    <li key={ind.slug}>
-                      <Link to={`/industria/${ind.slug}`} className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground">
-                        <ind.icon className="h-4 w-4 text-accent" />
-                        {ind.name}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
+                <h3 className="mb-3 font-heading text-lg font-semibold">¿Interesado en {product.name}?</h3>
+                <p className="mb-4 text-sm text-muted-foreground">
+                  Solicite una cotización sin compromiso. Nuestros asesores especializados le contactarán en menos de 24 horas.
+                </p>
+                <Button className="w-full" asChild>
+                  <Link to={`/cotizar?producto=${product.slug}`}>Cotizar ahora <ArrowRight className="ml-1 h-4 w-4" /></Link>
+                </Button>
+                <a
+                  href={`https://wa.me/573107695580?text=${encodeURIComponent(`Hola, quiero información sobre ${product.name}`)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-3 block w-full rounded-lg border border-[hsl(142,71%,45%)] bg-[hsl(142,71%,45%)]/5 py-2.5 text-center text-sm font-medium text-[hsl(142,71%,45%)] transition-colors hover:bg-[hsl(142,71%,45%)]/10"
+                >
+                  Consultar por WhatsApp
+                </a>
               </div>
-            )}
+
+              {relatedIndustries.length > 0 && (
+                <div className="rounded-xl border bg-card p-6 shadow-sm">
+                  <h3 className="mb-3 font-heading text-lg font-semibold">Industrias relacionadas</h3>
+                  <ul className="space-y-2">
+                    {relatedIndustries.map((ind) => (
+                      <li key={ind.slug}>
+                        <Link to={`/industria/${ind.slug}`} className="flex items-center gap-2 rounded-md p-2 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground">
+                          <ind.icon className="h-4 w-4 text-accent" />
+                          {ind.name}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </section>
