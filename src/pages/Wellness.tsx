@@ -9,7 +9,7 @@ const features = [
   { icon: Heart, title: "Bienestar integral", desc: "Seguros de salud, vida y accidentes para todos los colaboradores con coberturas premium." },
   { icon: Shield, title: "Protección familiar", desc: "Extensión de beneficios a familias de empleados con planes flexibles." },
   { icon: TrendingUp, title: "Retención de talento", desc: "Los mejores beneficios laborales del mercado para atraer y retener a su equipo." },
-  { icon: Gift, title: "Experiencia digital", desc: "Plataforma donde cada empleado gestiona sus beneficios, como Betterfly." },
+  { icon: Gift, title: "Experiencia digital", desc: "Plataforma donde cada empleado gestiona sus beneficios de forma fácil e intuitiva." },
 ];
 
 const Wellness = () => (
