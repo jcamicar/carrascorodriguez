@@ -6,7 +6,8 @@ import zurichLogo from "@/assets/insurers/zurich.png";
 import mundialLogo from "@/assets/insurers/mundial.png";
 import hdiLogo from "@/assets/insurers/hdi.png";
 import sbsLogo from "@/assets/insurers/sbs.png";
-import cesceLogo from "@/assets/insurers/cesce.png";
+import cesceLogo from "@/assets/insurers/cesce.jpg";
+import berkleyLogo from "@/assets/insurers/berkley.svg";
 
 export interface Insurer {
   name: string;
