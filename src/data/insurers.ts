@@ -111,4 +111,13 @@ export const insurers: Insurer[] = [
     paymentMethods: ["Transferencia bancaria", "Tarjeta de crédito", "Débito automático"],
     portalUrl: "https://www.berkleyinternacional.com",
   },
+  {
+    name: "Seguros del Estado",
+    slug: "estado",
+    color: "#1B3667",
+    logo: estadoLogo,
+    description: "Aseguradora colombiana de vida con amplia trayectoria en seguros colectivos, vida grupo y accidentes personales.",
+    paymentMethods: ["PSE — Pago en línea", "Tarjeta de crédito/débito", "Débito automático", "Consignación bancaria"],
+    portalUrl: "https://www.segurosdelestado.com",
+  },
 ];
