@@ -8,6 +8,7 @@ import hdiLogo from "@/assets/insurers/hdi.png";
 import sbsLogo from "@/assets/insurers/sbs.png";
 import cesceLogo from "@/assets/insurers/cesce.jpg";
 import berkleyLogo from "@/assets/insurers/berkley.svg";
+import estadoLogo from "@/assets/insurers/estado.png";
 
 export interface Insurer {
   name: string;
@@ -109,5 +110,14 @@ export const insurers: Insurer[] = [
     description: "W. R. Berkley Corporation — aseguradora global especializada en líneas comerciales, exceso y reaseguro.",
     paymentMethods: ["Transferencia bancaria", "Tarjeta de crédito", "Débito automático"],
     portalUrl: "https://www.berkleyinternacional.com",
+  },
+  {
+    name: "Seguros del Estado",
+    slug: "estado",
+    color: "#1B3667",
+    logo: estadoLogo,
+    description: "Aseguradora colombiana de vida con amplia trayectoria en seguros colectivos, vida grupo y accidentes personales.",
+    paymentMethods: ["PSE — Pago en línea", "Tarjeta de crédito/débito", "Débito automático", "Consignación bancaria"],
+    portalUrl: "https://www.segurosdelestado.com",
   },
 ];
