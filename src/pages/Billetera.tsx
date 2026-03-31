@@ -27,7 +27,13 @@ const Billetera = () => (
           onSubmit={(e) => {
             e.preventDefault();
             const msg = "Quiero registrarme para la billetera virtual de seguros";
-            window.open(`https://wa.me/573107695580?text=${encodeURIComponent(msg)}`, "_blank");
+            const a = document.createElement("a");
+            a.href = `https://wa.me/573107695580?text=${encodeURIComponent(msg)}`;
+            a.target = "_blank";
+            a.rel = "noopener noreferrer";
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
           }}
         >
           <Input type="email" placeholder="tu@email.com" required />
